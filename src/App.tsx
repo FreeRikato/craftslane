@@ -1,121 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+import DiscoveryHome from './screens/DiscoveryHome';
+import CuratedStories from './screens/CuratedStories';
+import ArtisanProductStory from './screens/ArtisanProductStory';
+import ArtisanStoryCapture from './screens/ArtisanStoryCapture';
+import ConsentPrivacyDashboard from './screens/ConsentPrivacyDashboard';
+import EarningsImpactInsights from './screens/EarningsImpactInsights';
+import ArtisanDashboard from './screens/ArtisanDashboard';
+import ArtisanProfileSetup from './screens/ArtisanProfileSetup';
+import ProductCatalog from './screens/ProductCatalog';
+import ImpactCheckout from './screens/ImpactCheckout';
+
+const Home = () => (
+  <div className="min-h-screen bg-background font-body-md text-on-background p-md max-w-container-max mx-auto">
+    <h1 className="text-display-lg text-primary mb-md font-bold">Stitch UI Implementations</h1>
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sm">
+      <li><Link to="/discovery-home" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Discovery Home</Link></li>
+      <li><Link to="/curated-stories" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Curated Stories</Link></li>
+      <li><Link to="/artisan-product-story" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Artisan & Product Story</Link></li>
+      <li><Link to="/artisan-story-capture" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Artisan Story Capture</Link></li>
+      <li><Link to="/consent-privacy-dashboard" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Consent & Privacy Dashboard</Link></li>
+      <li><Link to="/earnings-impact-insights" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Earnings & Impact Insights</Link></li>
+      <li><Link to="/artisan-dashboard" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Artisan Dashboard</Link></li>
+      <li><Link to="/artisan-profile-setup" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Artisan Profile Setup</Link></li>
+      <li><Link to="/product-catalog" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Product Catalog</Link></li>
+      <li><Link to="/impact-checkout" className="text-secondary hover:text-secondary-fixed-dim transition-colors text-headline-md block p-sm border border-outline-variant/30 rounded-lg shadow-sm hover:shadow-md bg-surface">Impact Checkout</Link></li>
+    </ul>
+  </div>
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/discovery-home" element={<DiscoveryHome />} />
+        <Route path="/curated-stories" element={<CuratedStories />} />
+        <Route path="/artisan-product-story" element={<ArtisanProductStory />} />
+        <Route path="/artisan-story-capture" element={<ArtisanStoryCapture />} />
+        <Route path="/consent-privacy-dashboard" element={<ConsentPrivacyDashboard />} />
+        <Route path="/earnings-impact-insights" element={<EarningsImpactInsights />} />
+        <Route path="/artisan-dashboard" element={<ArtisanDashboard />} />
+        <Route path="/artisan-profile-setup" element={<ArtisanProfileSetup />} />
+        <Route path="/product-catalog" element={<ProductCatalog />} />
+        <Route path="/impact-checkout" element={<ImpactCheckout />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
